@@ -1,0 +1,46 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
+@import url(https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap);
+
+body{
+margin: 0; padding: 0
+}
+
+h1 {
+  background: url("Screenshot 2025-12-22 at 16.02.10.png") 50% 50% ;  
+  background-size: 100% auto ;background-position: 60% center;
+  -webkit-text-fill-color: transparent; 
+  -webkit-background-clip: text; background-position: 50% 50%;
+  font-size: 400px;
+  align-self: center; justify-self: center; margin-top: 0px
+}
+
+h3 {
+  font-size: 30px; margin: -330px 70px 0px 70px;
+  text-align: center; font-family: 'Inter'; font-weight: 600; color: rgb(181, 0, 0);
+}
+
+a {
+   color: white;
+    font-size: 20px; font-family: sans-serif; font-weight: 400;
+  border-radius:30px; border: none;
+  width: 300px; height: 65px;
+    gap: 15px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      text-decoration: none;
+ display: inline-flex;
+  align-items: center;
+  justify-content: center;
+    background-color: #01295C;
+    cursor: pointer;
+    transform: scale(1);
+    transition: 
+    transform 0.5s ease,
+    background-color 0.5s ease;
+    align-self: center; justify-self: center;
+    margin: 30px 583px 0px 583px;
+}
+
+a:focus, a:hover {
+ background-color:#001e46;
+transform: scale(1.1); transition: 0.5s ease;
+}

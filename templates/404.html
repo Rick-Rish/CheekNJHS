@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Oops...</title>
+</head>
+<body> 
+</body>
+</html>
+<link rel="stylesheet" href="{{ url_for('static', filename='404.css') }}">
+
+<div class="404 Error Page">
+    <h1>404</h1>
+    <h3>You might've took the wrong turn because this page does not exsist. Head home knowing that you're a priceless NJHS volunteer!</h3>
+    <a href="{{ url_for('home') }}">Go Back Home</a>
+</div>

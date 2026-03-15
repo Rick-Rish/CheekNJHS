@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{user}}'s Profile</title>
+</head>
+<body>
+</body>
+</html>
+    <link rel="stylesheet" href="{{ url_for('static', filename='profile.css') }}">
+<section id="nav-bar">
+          <nav>
+        <div class="logos">
+          <a href="index.html">
+    <img src="Screenshot_2025-11-25_at_20.36.02-removebg-preview.png" class="PCMSlogo">
+    </a>
+    <img src="Screenshot_2025-11-25_at_20.31.06-removebg-preview.png" class="NJHSlogo">
+            </div>
+        <ul class="navs">
+         <li><a href="{{ url_for('home') }}">Home</a></li>
+         <li><a href="#">About Us</a></li>
+         <li><a href="{{ url_for('volunteer') }}">Volunteering</a></li>
+         <li><a href="#">Requirements</a></li>
+         <li><a href="#">Hours</a></li>
+         <li><a href="pictures.html">Pictures</a></li>
+         <li><div class="Log-Btn" id="Log-Btnn">
+        {% if 'user' in session %}
+             <a href="{{ url_for('user') }}">{{ session['user'] }}</a>
+        {% else %}
+             <a href="{{ url_for('login') }}">Log In</a>
+        {% endif %}
+         </li>
+         </div>
+        </ul>
+    </nav>
+</section>
+
+<h1>Welcome, {{user}}</h1>
+<a href="{{ url_for('logout') }}">Logout</a>
+
+<h2>Your Upcoming Events</h2>
+
+{% if upcoming %}
+     {% for event in upcoming %}
+       <div class="prof-event">
+          <h2>{{ event.name }}</h2>
+          <h4>On</h4>
+          <h3>{{ event.date }}</h3>
+          <h6>{{ event.time }}</h6>
+          <p>Description: {{ event.description }}</p>
+               <p>People Signed Up:</p>
+     {% if event.id in event_signups %}
+     <ul>
+      {% for person in event_signups[event.id] %}
+       <li>{{person}}</li>
+      {% endfor %}
+      </ul>
+     {% else %}
+      <p>No one has signed up yet.</p>
+     {% endif %}
+       </div>
+    {% endfor %}
+ {% else %}
+    <p>You haven't signed up for any events yet.</p>
+ {% endif %}

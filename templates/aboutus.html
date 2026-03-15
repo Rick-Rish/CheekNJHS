@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us</title>
+</head>
+<body>
+</body>
+</html>
+<link rel="stylesheet" href="{{ url_for('static', filename='aboutus.css') }}">
+<section id="nav-bar">
+          <nav>
+        <div class="logos">
+          <a href="index.html">
+    <img src="Screenshot_2025-11-25_at_20.36.02-removebg-preview.png" class="PCMSlogo">
+    </a>
+    <img src="Screenshot_2025-11-25_at_20.31.06-removebg-preview.png" class="NJHSlogo">
+            </div>
+        <ul class="navs">
+         <li><a href="index.html">Home</a></li>
+         <li><a href="{{ url_for('about_us') }}">About Us</a></li>
+         <li><a href="volunteering.html">Volunteering</a></li>
+         <li><a href="#">Requirements</a></li>
+         <li><a href="#">Hours</a></li>
+         <li><a href="pictures.html">Pictures</a></li>
+         <li><div class="Log-Btn" id="Log-Btnn">
+        {% if 'user' in session %}
+             <a href="{{ url_for('user') }}">{{ session['user'] }}</a>
+        {% else %}
+             <a href="{{ url_for('login') }}">Log In</a>
+{% endif %}
+         </li>
+         </div>
+        </ul>
+    </nav>
+</section>
+
+<div class="w-n">
+  <h2>Who We Are</h2>
+  <p>We are Cheek Middle School's proud National Junior Honor Society team. We volunteer to help the community since it's our duty, and we strive to do so, to make an impact. We want to help our community out with any volunteering jobs they have and want to spread love. We have over 50 students who would love to help everyone out and volunteer to make an impact in the community. If you have any volunteering opportunities in the Denton area for us, please contact the chapter advisor, Mrs. Fields at "number".</p>
+
+  <h2>Why We Do What We Do</h2>
+  <p>It sounds pretty simple, and it indeed is very simple why. We want to make an impact, create a change, and bring love wherever it is needed. Examples include the suicide prevention walk, sending letters to Mrs.Cheek, donating toys for Christmas, and the salvation army bell ringing. We also do a lot of fun activites here and then to keep ourselves entertained and the enjoyment going. We love what we do!</p>
+
+  <h2>Copyright</h2>
+  <h4>© 2026 Cheek NJHS Website. All rights reserved.</h4>
+  <p>All content on this website, including text, images, graphics, design, and source code, is the property of the website creator unless otherwise stated and is protected by applicable copyright laws. No part of this website may be copied, reproduced, distributed, or used without prior permission. The website and its content are provided for informational and educational purposes only. The website owner reserves the right to update, modify, or remove content at any time.</p>
+  
+  <h2>Terms and Conditions</h2>
+  <p>By using this website, you agree to use it responsibly and not attempt to disrupt or misuse the system.Users are responsible for the information they submit to the website. The website owner reserves the right to modify or remove content and accounts if necessary. This website is provided for informational and educational purposes.</p>
+
+  <h2>Privacy Policy</h2>
+  <p>This website may collect basic information such as usernames or login details when users create an account.This information is used only to provide website features such as user profiles and event signups.We do not sell or share personal information with third parties. Basic technical information such as IP addresses or cookies may be used for security and login sessions. If you have questions about this policy, contact: rishonishwa@gmail.com</p>
+</div>
+
+<section class="EB">
+  <h3>With you every step</h3>
+  <h2>of the journey</h2>
+  <h4>Contact Us Below</h4>
+   <div class="button-eb"></div>
+    <div class="Band">
+  <img src="Screenshot_2026-01-27_at_11.48.42-removebg-preview.png" alt="B">
+  <a href="https://www.band.us/band/99487941/member">Band App</a>
+    </div>
+
+       <div class="Gmail">
+  <img src="Screenshot_2026-01-27_at_11.51.12-removebg-preview.png" alt="G">
+  <a href="dfields@g.dentonisd.org">Gmail</a>
+       </div>
+
+          <div class="Phone-No">
+  <img src="Screenshot_2026-01-27_at_11.54.36-removebg-preview.png" alt="P">
+  <a href="">Phone Number<br>(EMER. ONLY)</a>
+          </div>
+        </div>
+    <div class="Extra">
+     <div clas="About-EB">
+    <h5>About Us</h5>
+    <a href="">About Us</a>
+    <a href="">Copyright</a>
+    <a href="https://cheekms.dentonisd.org/">Cheek Middle School</a>
+    <a href="https://sites.google.com/g.dentonisd.org/go-panthers/home">Mrs. Fields</a>
+    </div>
+
+    <div clas="Member-EB">
+    <h5>For Members</h5>
+    <a href="logsign.html">Log In</a>
+    <a href="logsign.html">Sign Up</a>
+    <a href="">Log Hours</a>
+    <a href="volunteering.html">Upcoming Events</a>
+    </div>
+
+    <div clas="Support-EB">
+    <h5>Support</h5>
+    <h6>Email Linked Above</h6>
+    <h6>Band Linked Above</h6>
+    <h6>Phone Number Linked Above</h6>
+    </div>
+  </div>
+  
+  <div class="Final-EB">
+  <div class="Line-EB"></div>
+  <img src="cheek-ms-favicon.png">
+  <h6>© Cheek NJHS - all rights reserved</h6>
+  </div>
+</section>

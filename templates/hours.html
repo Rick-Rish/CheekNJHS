@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hours</title>
+</head>
+<body> 
+</body>
+</html>
+<link rel="stylesheet" href="{{ url_for('static', filename='hours.css') }}">
+
+<section id="nav-bar">
+          <nav>
+        <div class="logos">
+          <a href="index.html">
+    <img src="Screenshot_2025-11-25_at_20.36.02-removebg-preview.png" class="PCMSlogo">
+    </a>
+    <img src="Screenshot_2025-11-25_at_20.31.06-removebg-preview.png" class="NJHSlogo">
+            </div>
+        <ul class="navs">
+         <li><a href="index.html">Home</a></li>
+         <li><a href="{{ url_for('about_us') }}">About Us</a></li>
+         <li><a href="volunteering.html">Volunteering</a></li>
+         <li><a href="#">Requirements</a></li>
+         <li><a href="{{ url_for('hours') }}">Hours</a></li>
+         <li><a href="pictures.html">Pictures</a></li>
+         <li><div class="Log-Btn" id="Log-Btnn">
+        {% if 'user' in session %}
+             <a href="{{ url_for('user') }}">{{ session['user'] }}</a>
+        {% else %}
+             <a href="{{ url_for('login') }}">Log In</a>
+{% endif %}
+         </li>
+         </div>
+        </ul>
+    </nav>
+</section>
+
+<div class="leaderboard">
+    <h2>Top 5 Club</h2>
+   <div class="lead">
+    <div class="header">
+      <h4>Position</h4>
+      <h4>Name</h4>
+      <h4>Amount of Hours</h4>
+    </div>
+      <div class="table">
+        <h3 class="o">1st Place</h3>
+        <h3>Katarina K</h3>
+        <h3>101.5 Hours</h3>
+        <h3 class="t">2nd Place</h3>
+        <h3>Rishon R</h3>
+        <h3>66 Hours</h3>
+        <h3 class="th">3rd Place</h3>
+        <h3>Abigail C</h3>
+        <h3>58 Hours</h3>
+        <h3>4th Place</h3>
+        <h3>Kushwanth K</h3>
+        <h3>51.5 Hours</h3>
+        <h3>5th Place</h3>
+        <h3>Sophia J</h3>
+        <h3>33.5 Hours</h3>
+    </div>
+  </div>
+</div>
+
+<div class="stats">
+  <h3>Total Hours: 667.5 Hours</h3>
+  <h3>Contribution: 42 Students</h3>
+  <h3>Hour Average per Student: 15.9 Hours</h3>
+</div>
+
+<div class="hour-box">
+  <h2>Want to log your hours?</h2>
+  <h4>Simply log your hours by clicking the button below and filling the form out. Make sure you are on your CHROMEBOOK when filling this out. <br> Make sure to fill each form with the date and information about the volunteering you did. </h4>
+  <h6>All hours are accounted for on a sheets.</h6>
+   <div class="buttonh">
+   <a href="https://docs.google.com/forms/d/e/1FAIpQLSfbLpVuRwe2R5yqLT9akm0D1DskgdMw8wn7wApG8lu8PMLK8Q/viewform" class="forms">Fill Out</a>
+   </div>
+</div>
+
+<section class="EB">
+  <h3>With you every step</h3>
+  <h2>of the journey</h2>
+  <h4>Contact Us Below</h4>
+   <div class="button-eb"></div>
+    <div class="Band">
+  <img src="Screenshot_2026-01-27_at_11.48.42-removebg-preview.png" alt="B">
+  <a href="https://www.band.us/band/99487941/member">Band App</a>
+    </div>
+
+       <div class="Gmail">
+  <img src="Screenshot_2026-01-27_at_11.51.12-removebg-preview.png" alt="G">
+  <a href="dfields@g.dentonisd.org">Gmail</a>
+       </div>
+
+          <div class="Phone-No">
+  <img src="Screenshot_2026-01-27_at_11.54.36-removebg-preview.png" alt="P">
+  <a href="">Phone Number<br>(EMER. ONLY)</a>
+          </div>
+        </div>
+    <div class="Extra">
+     <div clas="About-EB">
+    <h5>About Us</h5>
+    <a href="">About Us</a>
+    <a href="">Copyright</a>
+    <a href="https://cheekms.dentonisd.org/">Cheek Middle School</a>
+    <a href="https://sites.google.com/g.dentonisd.org/go-panthers/home">Mrs. Fields</a>
+    </div>
+
+    <div clas="Member-EB">
+    <h5>For Members</h5>
+    <a href="logsign.html">Log In</a>
+    <a href="logsign.html">Sign Up</a>
+    <a href="">Log Hours</a>
+    <a href="volunteering.html">Upcoming Events</a>
+    </div>
+
+    <div clas="Support-EB">
+    <h5>Support</h5>
+    <h6>Email Linked Above</h6>
+    <h6>Band Linked Above</h6>
+    <h6>Phone Number Linked Above</h6>
+    </div>
+  </div>
+  
+  <div class="Final-EB">
+  <div class="Line-EB"></div>
+  <img src="cheek-ms-favicon.png">
+  <h6>© Cheek NJHS - all rights reserved</h6>
+  </div>
+</section>

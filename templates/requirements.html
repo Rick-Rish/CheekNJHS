@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Requirements</title>
+</head>
+<body>
+</body>
+</html>
+<link rel="stylesheet" href="{{ url_for('static', filename='requirements.css') }}">
+
+<section id="nav-bar">
+          <nav>
+        <div class="logos">
+          <a href="index.html">
+    <img src="Screenshot_2025-11-25_at_20.36.02-removebg-preview.png" class="PCMSlogo">
+    </a>
+    <img src="Screenshot_2025-11-25_at_20.31.06-removebg-preview.png" class="NJHSlogo">
+            </div>
+        <ul class="navs">
+         <li><a href="index.html">Home</a></li>
+         <li><a href="{{ url_for('about_us') }}">About Us</a></li>
+         <li><a href="volunteering.html">Volunteering</a></li>
+         <li><a href="{{ url_for('req') }}">Requirements</a></li>
+         <li><a href="{{ url_for('hours') }}">Hours</a></li>
+         <li><a href="pictures.html">Pictures</a></li>
+         <li><div class="Log-Btn" id="Log-Btnn">
+        {% if 'user' in session %}
+             <a href="{{ url_for('user') }}">{{ session['user'] }}</a>
+        {% else %}
+             <a href="{{ url_for('login') }}">Log In</a>
+{% endif %}
+         </li>
+         </div>
+        </ul>
+    </nav>
+</section>
+
+<div class="faq-cont">
+    <h2>FAQ</h2>
+    <details>
+        <summary>What is NJHS?</summary>
+        <p>NJHS stands for National Junior Honor Society.  It's a service club for students who meet academic requirements.  The National Junior Honor Society (NJHS) elevates a school's commitment to the values of scholarship, service, leadership, character, and citizenship. These five pillars have been associated with membership in the organization since its inception in 1929.  In High School, you can be invited to NHS, the National Honor Society at the end of your sophomore year.</p>
+    </details>
+    <details>
+        <summary>How does NJHS benefit me?</summary>
+        <p>NJHS is an organization based on service.  As you prepare for high school and eventually college, participating in service opportunities opens doors for you.  You'll have material to put on college applications, scholarships for school become available, and you will be around like-minded students who are vested in education.</p>
+    </details>
+    <details>
+        <summary>How do I get service hours and how many are required?</summary>
+        <p>Members are required to do 10 hours a semester and are challenged to do 15.  You can serve anywhere in the community as long as you are not getting paid.  Mrs. Fields will provide opportunities to serve at all the elementary school special events, booster clubs use our members in concession stands, local churches call when they have community events, Salvation Army bell ringing has been a yearly opportunity, Providence Village invites us to help with their Christmas parade, and we do monthly work days after school. Traditionally, there has not been a shortage of places to serve.</p>
+    </details>
+    <details>   
+        <summary>Who's involved and how do I join?</summary>
+        <p>Students who have an overall 93 average in their core classes at semester in 7th and 8th grade are invited to be in NJHS. There is an application and teacher evaluation portion of the process. You are notified if you qualify.</p>
+    </details> 
+    <details>
+        <summary>What's the time commitment?</summary>
+        <p>We have member meetings every 4-6 weeks during the school year. Volunteer hours are done as you are able, and officers meet prior to each member meeting. </p>
+    </details>
+    <details>
+        <summary>What do officers do?</summary>
+        <p>Our officers include a President, Vice President, Secretary, and Community Service Chairperson.  They meet and help plan events, communicate information to members, collect service hours and report to sponsors, run meetings, take minutes at the meetings, etc.</p>
+    </details>
+</div>
