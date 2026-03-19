@@ -9,8 +9,7 @@ app = Flask(__name__)
 app.config['SECRET_KEY'] = '2a421c841097eadac4554d06abdc6751'
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///cheeknjhs.db'
 """
-app.config['GOOGLE_CLIENT_ID'] = "844723312161-3lpe341b9ulr0t1p7sth15gv181ff32a.apps.googleusercontent.com"
-app.config['GOOGLE_CLIENT_SECRET'] = "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"
+
 """
 oauth = OAuth(app)
 db = SQLAlchemy(app)
