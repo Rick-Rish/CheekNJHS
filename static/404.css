@@ -6,7 +6,7 @@ margin: 0; padding: 0
 }
 
 h1 {
-  background: url("Screenshot 2025-12-22 at 16.02.10.png") 50% 50% ;  
+  background-image: url("/static/images/Screenshot_2025-12-22_at_16.02.10.png"); /* Something is wrong with this url, fix later */
   background-size: 100% auto ;background-position: 60% center;
   -webkit-text-fill-color: transparent; 
   -webkit-background-clip: text; background-position: 50% 50%;

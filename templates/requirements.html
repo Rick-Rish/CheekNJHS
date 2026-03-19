@@ -13,18 +13,18 @@
 <section id="nav-bar">
           <nav>
         <div class="logos">
-          <a href="index.html">
-    <img src="Screenshot_2025-11-25_at_20.36.02-removebg-preview.png" class="PCMSlogo">
+          <a href="{{ url_for('home') }}">
+    <img src="{{ url_for('static', filename='images/Screenshot_2025-11-25_at_20.36.02-removebg-preview.png') }}" class="PCMSlogo">
     </a>
-    <img src="Screenshot_2025-11-25_at_20.31.06-removebg-preview.png" class="NJHSlogo">
+    <img src="{{ url_for('static', filename='images/Screenshot_2025-11-25_at_20.31.06-removebg-preview.png') }}" class="NJHSlogo">
             </div>
         <ul class="navs">
-         <li><a href="index.html">Home</a></li>
+         <li><a href="{{ url_for('home') }}">Home</a></li>
          <li><a href="{{ url_for('about_us') }}">About Us</a></li>
-         <li><a href="volunteering.html">Volunteering</a></li>
+         <li><a href="{{ url_for('volunteer') }}">Volunteering</a></li>
          <li><a href="{{ url_for('req') }}">Requirements</a></li>
          <li><a href="{{ url_for('hours') }}">Hours</a></li>
-         <li><a href="pictures.html">Pictures</a></li>
+         <li><a href="{{ url_for('pictures') }}">Pictures</a></li>
          <li><div class="Log-Btn" id="Log-Btnn">
         {% if 'user' in session %}
              <a href="{{ url_for('user') }}">{{ session['user'] }}</a>

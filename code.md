@@ -74,3 +74,17 @@ from sqlalchemy.orm import Session
 session = Session(engine)
 session.execute(text('INSERT INTO people(name, age) VALUES("Mike", 30)'))
 session.commit()
+
+from app import db, login_manager
+
+with app.app_context():
+    event = Event(
+        name="Something",
+        date="March 24, 2026",
+        time="3:00 to 8:00PM Slots",
+        description="Our NJHS Induction Ceremony welcomes all new 7th and 8th graders..."
+    )
+
+    db.session.add(event)
+    db.session.commit()
+

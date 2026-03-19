@@ -130,7 +130,7 @@ background-color: rgb(139, 0, 0);
 }
 
 .cool-pic-bg {
- background-image: url(coolbackgrounds-unsplash-zeller.jpg);
+ background-image: url(/static/images/coolbackgrounds-unsplash-zeller.jpg);
  height: 400px; width: 1470px;
  margin-top: 60px;
 }

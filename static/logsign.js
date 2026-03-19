@@ -11,6 +11,18 @@ loginBtn.addEventListener("click", () => {
   container.classList.remove("active");
 });
 
+setTimeout(function() {
+    const flashMessages = document.querySelector('.flash-messages');
+    if (flashMessages) {
+      flashMessages.style.transition = "opacity 0.5s ease";
+      flashMessages.style.opacity = "0";
+
+      setTimeout(() => {
+        flashMessages.remove();
+      }, 500); // wait
+    }
+  }, 10000);
+
 const logWelcome = document.getElementById("greetingsign");
 const logHour = new Date().getHours();
 

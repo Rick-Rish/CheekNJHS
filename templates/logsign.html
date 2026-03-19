@@ -16,41 +16,45 @@
 <section id="nav-bar">
           <nav>
         <div class="logos">
-          <a href="index.html">
-    <img src="Screenshot_2025-11-25_at_20.36.02-removebg-preview.png" class="PCMSlogo">
+          <a href="{{ url_for('home') }}">
+    <img src="{{ url_for('static', filename='images/Screenshot_2025-11-25_at_20.36.02-removebg-preview.png') }}" class="PCMSlogo">
     </a>
-    <img src="Screenshot_2025-11-25_at_20.31.06-removebg-preview.png" class="NJHSlogo">
+    <img src="{{ url_for('static', filename='images/Screenshot_2025-11-25_at_20.31.06-removebg-preview.png') }}" class="NJHSlogo">
             </div>
         <ul class="navs">
-         <li><a href="index.html">Home</a></li>
-         <li><a href="#">About Us</a></li>
+         <li><a href="{{ url_for('home') }}">Home</a></li>
+         <li><a href="{{ url_for('about_us') }}">About Us</a></li>
          <li><a href="{{ url_for('volunteer') }}">Volunteering</a></li>
-         <li><a href="#">Requirements</a></li>
-         <li><a href="#">Hours</a></li>
-         <li><a href="#">Pictures</a></li>
-          <div class="Log-Btn" id="Log-Btnn">
-         <li><a href="logsign.html">Log In</a></li>
+         <li><a href="{{ url_for('req') }}">Requirements</a></li>
+         <li><a href="{{ url_for('hours') }}">Hours</a></li>
+         <li><a href="{{ url_for('pictures') }}">Pictures</a></li>
+         <li><div class="Log-Btn" id="Log-Btnn">
+        {% if 'user' in session %}
+             <a href="{{ url_for('user') }}">{{ session['user'] }}</a>
+        {% else %}
+             <a href="{{ url_for('login') }}">Log In</a>
+{% endif %}
+         </li>
          </div>
         </ul>
     </nav>
 </section>
-
+ 
     <div class="container" id="container">
       <div class="form-container sign-up">
         <form method="post" action="/register">
-
-      {% with messages = get_flashed_messages(with_categories=true) %}
-        {% if messages %}
-          <div class="flash-messages">
+          {% with messages = get_flashed_messages(with_categories=true) %}
+           {% if messages %}
+                <div class="flash-messages">
             {% for category, message in messages %}
-              <p class="flash {{ category }}">{{ message }}</p>
-            {% endfor %}
-          </div>
-        {% endif %}
-      {% endwith %}
+                 <p class="flash {{ category }}">{{ message }}</p>
+               {% endfor %}
+             </div>
+             {% endif %}
+          {% endwith %}
           <h1>Create Account</h1>
           <div class="social-icons">
-            <a href="#" class="icon"><i class="fa-brands fa-google-plus-g"></i></a>
+            <a href="" class="icon"><i class="fa-brands fa-google-plus-g"></i></a>
           </div>
           <span>or use your email for registeration</span>
           <input name="name" type="text" placeholder="Name"/>
@@ -58,13 +62,24 @@
           <input name="password"type="password" placeholder="Password"/>
           <input name="con-password"type="password" placeholder="Confirm Password"/>
           <button name="submit" type="submit">Sign Up</button>
+          <input type="checkbox" name="rememberme" id="remember">
+          <label for="remember">Remember Me</label>
         </form>      
       </div>
       <div class="form-container sign-in">
         <form method="post" action="/login">
+          {% with messages = get_flashed_messages(with_categories=true) %}
+           {% if messages %}
+                <div class="flash-messages">
+            {% for category, message in messages %}
+                 <p class="flash {{ category }}">{{ message }}</p>
+               {% endfor %}
+             </div>
+             {% endif %}
+          {% endwith %}
           <h1>Log In</h1>
           <div class="social-icons">
-            <a href="#" class="icon"><i class="fa-brands fa-google-plus-g"></i></a>
+            <a href="" class="icon"><i class="fa-brands fa-google-plus-g"></i></a>
           </div>
           <span>or use your email password</span>
           <input name="name" type="text" placeholder="Name"/>

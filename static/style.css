@@ -205,12 +205,12 @@ transform: scale(1.1); transition: 0.3s ease;
 }
 
  @keyframes slideShow {
-0% { background-image: url(Screenshot\ 2025-12-22\ at\ 16.02.10.png); }
-20% { background-image: url(Screenshot\ 2025-12-30\ at\ 12.11.24.png); }
-40% { background-image: url(Screenshot\ 2025-12-30\ at\ 12.12.58.png); }
-60% { background-image: url(Screenshot\ 2025-12-30\ at\ 12.15.56.png); }
-80% { background-image: url(Screenshot\ 2025-12-30\ at\ 12.17.07.png); }
-100% { background-image: url(Screenshot\ 2025-12-22\ at\ 16.02.10.png); }
+  0% {background-image: url("/static/images/Screenshot 2025-12-22 at 16.02.10.png");}
+  20% {background-image: url("/static/images/Screenshot 2025-12-30 at 12.11.24.png");}
+  40% {background-image: url("/static/images/Screenshot 2025-12-30 at 12.12.58.png");}
+  60% {background-image: url("/static/images/Screenshot 2025-12-30 at 12.15.56.png");}
+  80% {background-image: url("/static/images/Screenshot 2025-12-30 at 12.17.07.png");}
+  100% {background-image: url("/static/images/Screenshot 2025-12-22 at 16.02.10.png");}
 }
 
 .opporspace h2 {

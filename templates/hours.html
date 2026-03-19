@@ -13,18 +13,18 @@
 <section id="nav-bar">
           <nav>
         <div class="logos">
-          <a href="index.html">
-    <img src="Screenshot_2025-11-25_at_20.36.02-removebg-preview.png" class="PCMSlogo">
+          <a href="{{ url_for('home') }}">
+    <img src="{{ url_for('static', filename='images/Screenshot_2025-11-25_at_20.36.02-removebg-preview.png') }}" class="PCMSlogo">
     </a>
-    <img src="Screenshot_2025-11-25_at_20.31.06-removebg-preview.png" class="NJHSlogo">
+    <img src="{{ url_for('static', filename='images/Screenshot_2025-11-25_at_20.31.06-removebg-preview.png') }}" class="NJHSlogo">
             </div>
         <ul class="navs">
-         <li><a href="index.html">Home</a></li>
+         <li><a href="{{ url_for('home') }}">Home</a></li>
          <li><a href="{{ url_for('about_us') }}">About Us</a></li>
-         <li><a href="volunteering.html">Volunteering</a></li>
-         <li><a href="#">Requirements</a></li>
+         <li><a href="{{ url_for('volunteer') }}">Volunteering</a></li>
+         <li><a href="{{ url_for('req') }}">Requirements</a></li>
          <li><a href="{{ url_for('hours') }}">Hours</a></li>
-         <li><a href="pictures.html">Pictures</a></li>
+         <li><a href="{{ url_for('pictures') }}">Pictures</a></li>
          <li><div class="Log-Btn" id="Log-Btnn">
         {% if 'user' in session %}
              <a href="{{ url_for('user') }}">{{ session['user'] }}</a>
@@ -86,35 +86,35 @@
   <h4>Contact Us Below</h4>
    <div class="button-eb"></div>
     <div class="Band">
-  <img src="Screenshot_2026-01-27_at_11.48.42-removebg-preview.png" alt="B">
+  <img src="{{ url_for('static', filename='images/Screenshot_2026-01-27_at_11.48.42-removebg-preview.png') }}" alt="B">
   <a href="https://www.band.us/band/99487941/member">Band App</a>
     </div>
 
        <div class="Gmail">
-  <img src="Screenshot_2026-01-27_at_11.51.12-removebg-preview.png" alt="G">
-  <a href="dfields@g.dentonisd.org">Gmail</a>
+  <img src="{{ url_for('static', filename='images/Screenshot_2026-01-27_at_11.51.12-removebg-preview.png') }}" alt="G">
+  <a href="mailto:dfields@g.dentonisd.org">Gmail</a>
        </div>
 
           <div class="Phone-No">
-  <img src="Screenshot_2026-01-27_at_11.54.36-removebg-preview.png" alt="P">
+  <img src="{{ url_for('static', filename='images/Screenshot_2026-03-18_at_18.53.58-removebg-preview.png') }}" alt="P">
   <a href="">Phone Number<br>(EMER. ONLY)</a>
           </div>
         </div>
     <div class="Extra">
      <div clas="About-EB">
     <h5>About Us</h5>
-    <a href="">About Us</a>
-    <a href="">Copyright</a>
+    <a href="{{ url_for('about_us') }}">About Us</a>
+    <a href="{{ url_for('about_us') }}">Copyright</a>
     <a href="https://cheekms.dentonisd.org/">Cheek Middle School</a>
     <a href="https://sites.google.com/g.dentonisd.org/go-panthers/home">Mrs. Fields</a>
     </div>
 
     <div clas="Member-EB">
     <h5>For Members</h5>
-    <a href="logsign.html">Log In</a>
-    <a href="logsign.html">Sign Up</a>
-    <a href="">Log Hours</a>
-    <a href="volunteering.html">Upcoming Events</a>
+    <a href="{{ url_for('login') }}">Log In</a>
+    <a href="{{ url_for('login') }}">Sign Up</a>
+    <a href="{{ url_for('hours') }}">Log Hours</a>
+    <a href="{{ url_for('volunteer') }}">Upcoming Events</a>
     </div>
 
     <div clas="Support-EB">
@@ -127,7 +127,7 @@
   
   <div class="Final-EB">
   <div class="Line-EB"></div>
-  <img src="cheek-ms-favicon.png">
+  <img src="{{ url_for('static', filename='images/cheek-ms-favicon.png') }}">
   <h6>© Cheek NJHS - all rights reserved</h6>
   </div>
 </section>

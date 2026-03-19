@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pictures</title>
+         <link rel="stylesheet" href="pictures.css">
+        <link rel="icon" href="cheek-ms-favicon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
+</head>
+<body>
+    
+</body>
+</html>
+<link rel="stylesheet" href="{{ url_for('static', filename='pictures.css') }}">
+<section id="nav-bar">
+          <nav>
+        <div class="logos">
+          <a href="{{ url_for('home') }}">
+    <img src="{{ url_for('static', filename='images/Screenshot_2025-11-25_at_20.36.02-removebg-preview.png') }}" class="PCMSlogo">
+    </a>
+    <img src="{{ url_for('static', filename='images/Screenshot_2025-11-25_at_20.31.06-removebg-preview.png') }}" class="NJHSlogo">
+            </div>
+        <ul class="navs">
+         <li><a href="{{ url_for('home') }}">Home</a></li>
+         <li><a href="{{ url_for('about_us') }}">About Us</a></li>
+         <li><a href="{{ url_for('volunteer') }}">Volunteering</a></li>
+         <li><a href="{{ url_for('req') }}">Requirements</a></li>
+         <li><a href="{{ url_for('hours') }}">Hours</a></li>
+         <li><a href="{{ url_for('pictures') }}">Pictures</a></li>
+         <li><div class="Log-Btn" id="Log-Btnn">
+        {% if 'user' in session %}
+             <a href="{{ url_for('user') }}">{{ session['user'] }}</a>
+        {% else %}
+             <a href="{{ url_for('login') }}">Log In</a>
+{% endif %}
+         </li>
+         </div>
+        </ul>
+    </nav>
+</section>
+
+ <div class="cool-pic-bg">
+  <div class="transl-bg">
+   <div class="collage-title">
+    <h1>Over The Years with NJHS</h1>
+     <p>These pictures date back from 10 years ago, and are not only Cheek NJHS's pictures, but also Navo NJHS and Panthers NJHS's ones. Scroll down, and recieve nostalgia with these pictures.</p>
+    </div>
+   </div>
+  </div>
+
+<section class="picture-grid">
+  <div class="cont-1">
+
+    <div class="card"><div class="card1"><img src="{{ url_for('static', filename='images/Screenshot 2026-02-23 at 17.12.11.png') }}" alt="Card 1"></div></div>
+    <div class="card"><div class="card2"><img src="{{ url_for('static', filename='images/Screenshot 2026-02-23 at 17.12.59.png') }}" alt="Card 2"></div></div>
+    <div class="card"><div class="card3"><img src="{{ url_for('static', filename='images/Screenshot 2026-02-24 at 19.22.01.png') }}" alt="Card 3"></div></div>
+    <div class="card"><div class="card4"><img src="{{ url_for('static', filename='images/Screenshot 2026-02-24 at 19.23.28.png') }}" alt="Card 4"></div></div>
+    <div class="card"><div class="card5"><img src="{{ url_for('static', filename='images/IMG_6018.jpg') }}" alt="Card 5"></div></div>
+    <div class="card"><div class="card6"><img src="{{ url_for('static', filename='images/Screenshot 2026-02-24 at 19.28.16.png') }}" alt="Card 6"></div></div>
+    <div class="card"><div class="card7"><img src="{{ url_for('static', filename='images/Screenshot 2026-02-24 at 19.30.15.png') }}" alt="Card 7"></div></div>
+    <div class="card"><div class="card8"><img src="{{ url_for('static', filename='images/Screenshot 2026-02-24 at 19.34.02.png') }}" alt="Card 8"></div></div>
+    <div class="card"><div class="card9"><img src="{{ url_for('static', filename='images/Screenshot 2026-02-24 at 19.34.49.png') }}" alt="Card 9"></div></div>
+    <div class="card"><div class="card10"><img src="{{ url_for('static', filename='images/Screenshot 2026-02-24 at 19.35.36.png') }}" alt="Card 10"></div></div>
+
+    <div class="card"><div class="card11"><img src="{{ url_for('static', filename='images/Screenshot 2026-02-24 at 19.37.17.png') }}" alt="Card 11"></div></div>
+    <div class="card"><div class="card12"><img src="{{ url_for('static', filename='images/Screenshot 2026-02-24 at 19.38.49.png') }}" alt="Card 12"></div></div>
+    <div class="card"><div class="card13"><img src="{{ url_for('static', filename='images/Screenshot 2026-02-24 at 19.38.49.png') }}" alt="Card 13"></div></div>
+    <div class="card"><div class="card14"><img src="{{ url_for('static', filename='images/Screenshot 2026-02-24 at 19.40.04.png') }}" alt="Card 14"></div></div>
+    <div class="card"><div class="card15"><img src="{{ url_for('static', filename='images/Screenshot 2026-02-17 at 19.48.41.png') }}" alt="Card 15"></div></div>
+    <div class="card"><div class="card16"><img src="{{ url_for('static', filename='images/Screenshot 2026-02-18 at 20.13.02.png') }}" alt="Card 16"></div></div>
+    <div class="card"><div class="card17"><img src="{{ url_for('static', filename='images/Screenshot 2026-02-18 at 20.15.25.png') }}" alt="Card 17"></div></div>
+    <div class="card"><div class="card18"><img src="{{ url_for('static', filename='images/Screenshot 2026-02-18 at 20.15.25.png') }}" alt="Card 18"></div></div>
+    <div class="card"><div class="card19"><img src="{{ url_for('static', filename='images/Screenshot 2026-02-19 at 17.33.02.png') }}" alt="Card 19"></div></div>
+    <div class="card"><div class="card20"><img src="{{ url_for('static', filename='images/Screenshot 2026-02-19 at 17.53.17.png') }}" alt="Card 20"></div></div>
+
+    <div class="card"><div class="card21"><img src="{{ url_for('static', filename='images/Screenshot 2026-02-19 at 17.58.07.png') }}" alt="Card 21"></div></div>
+    <div class="card"><div class="card22"><img src="{{ url_for('static', filename='images/Screenshot 2026-02-25 at 18.32.34.png') }}" alt="Card 22"></div></div>
+    <div class="card"><div class="card23"><img src="{{ url_for('static', filename='images/Screenshot 2026-02-25 at 18.36.34.png') }}" alt="Card 23"></div></div>
+    <div class="card"><div class="card24"><img src="{{ url_for('static', filename='images/Screenshot 2026-02-25 at 18.37.34.png') }}" alt="Card 24"></div></div>
+    <div class="card"><div class="card25"><img src="{{ url_for('static', filename='images/Screenshot 2026-02-25 at 18.39.17.png') }}" alt="Card 25"></div></div>
+    <div class="card"><div class="card26"><img src="{{ url_for('static', filename='images/Screenshot 2026-02-25 at 18.41.45.png') }}" alt="Card 26"></div></div>
+    <div class="card"><div class="card27"><img src="{{ url_for('static', filename='images/Screenshot 2026-02-25 at 18.44.14.png') }}" alt="Card 27"></div></div>
+    <div class="card"><div class="card28"><img src="{{ url_for('static', filename='images/Screenshot 2026-02-26 at 20.45.09.png') }}" alt="Card 28"></div></div>
+    <div class="card"><div class="card29"><img src="{{ url_for('static', filename='images/Screenshot 2026-02-26 at 20.26.45.png') }}" alt="Card 29"></div></div>
+    <div class="card"><div class="card30"><img src="{{ url_for('static', filename='images/Screenshot 2026-02-26 at 20.35.13.png') }}" alt="Card 30"></div></div>
+
+    <div class="card"><div class="card31"><img src="{{ url_for('static', filename='images/Screenshot 2026-02-26 at 20.38.57.png') }}" alt="Card 31"></div></div>
+    <div class="card"><div class="card32"><img src="{{ url_for('static', filename='images/Screenshot 2026-02-26 at 20.41.32.png') }}" alt="Card 32"></div></div>
+    <div class="card"><div class="card33"><img src="{{ url_for('static', filename='images/Screenshot 2026-02-26 at 20.47.03.png') }}" alt="Card 33"></div></div>
+    <div class="card"><div class="card34"><img src="{{ url_for('static', filename='images/Screenshot 2026-02-26 at 20.53.24.png') }}" alt="Card 34"></div></div>
+    <div class="card"><div class="card35"><img src="{{ url_for('static', filename='images/Screenshot 2026-02-26 at 20.51.11.png') }}" alt="Card 35"></div></div>
+    <div class="card"><div class="card36"><img src="{{ url_for('static', filename='images/Screenshot 2026-02-26 at 20.54.08.png') }}" alt="Card 36"></div></div>
+    <div class="card"><div class="card37"><img src="{{ url_for('static', filename='images/Screenshot 2026-02-26 at 20.56.00.png') }}" alt="Card 37"></div></div>
+    <div class="card"><div class="card38"><img src="{{ url_for('static', filename='images/Screenshot 2026-02-26 at 21.28.14.png') }}" alt="Card 38"></div></div>
+    <div class="card"><div class="card39"><img src="{{ url_for('static', filename='images/Screenshot 2026-02-26 at 21.29.37.png') }}" alt="Card 39"></div></div>
+    <div class="card"><div class="card40"><img src="{{ url_for('static', filename='images/Screenshot 2026-02-26 at 21.32.01.png') }}" alt="Card 40"></div></div>
+
+    <div class="card"><div class="card41"><img src="{{ url_for('static', filename='images/Screenshot 2026-02-26 at 21.34.10.png') }}" alt="Card 41"></div></div>
+<div class="card"><div class="card42"><img src="{{ url_for('static', filename='images/Screenshot 2026-02-26 at 21.38.17.png') }}" alt="Card 42"></div></div>
+<div class="card"><div class="card43"><img src="{{ url_for('static', filename='images/Screenshot 2026-02-26 at 21.39.23.png') }}" alt="Card 43"></div></div>
+<div class="card"><div class="card44"><img src="{{ url_for('static', filename='images/Screenshot 2026-02-26 at 21.40.36.png') }}" alt="Card 44"></div></div>
+<div class="card"><div class="card45"><img src="{{ url_for('static', filename='images/Screenshot 2026-02-26 at 21.41.45.png') }}" alt="Card 45"></div></div>
+<div class="card"><div class="card46"><img src="{{ url_for('static', filename='images/Screenshot 2026-02-26 at 21.42.58.png') }}" alt="Card 46"></div></div>
+<div class="card"><div class="card47"><img src="{{ url_for('static', filename='images/Screenshot 2026-02-26 at 21.45.25.png') }}" alt="Card 47"></div></div>
+<div class="card"><div class="card48"><img src="{{ url_for('static', filename='images/Screenshot 2026-02-26 at 21.46.14.png') }}" alt="Card 48"></div></div>
+<div class="card"><div class="card49"><img src="{{ url_for('static', filename='images/Screenshot 2026-02-26 at 21.47.31.png') }}" alt="Card 49"></div></div>
+<div class="card"><div class="card50"><img src="{{ url_for('static', filename='images/Screenshot 2026-02-26 at 21.48.22.png') }}" alt="Card 50"></div></div>
+
+<div class="card"><div class="card51"><img src="{{ url_for('static', filename='images/Screenshot 2026-02-26 at 21.49.37.png') }}" alt="Card 51"></div></div>
+<div class="card"><div class="card52"><img src="{{ url_for('static', filename='images/Screenshot 2026-02-26 at 21.50.47.png') }}" alt="Card 52"></div></div>
+<div class="card"><div class="card53"><img src="{{ url_for('static', filename='images/Screenshot 2026-02-26 at 21.51.33.png') }}" alt="Card 53"></div></div>
+<div class="card"><div class="card54"><img src="{{ url_for('static', filename='images/Screenshot 2026-02-26 at 21.52.19.png') }}" alt="Card 54"></div></div>
+<div class="card"><div class="card55"><img src="{{ url_for('static', filename='images/Screenshot 2026-02-26 at 21.53.07.png') }}" alt="Card 55"></div></div>
+<div class="card"><div class="card56"><img src="{{ url_for('static', filename='images/Screenshot 2026-02-26 at 21.54.28.png') }}" alt="Card 56"></div></div>
+<div class="card"><div class="card57"><img src="{{ url_for('static', filename='images/Screenshot 2026-02-26 at 21.55.37.png') }}" alt="Card 57"></div></div>
+<div class="card"><div class="card58"><img src="{{ url_for('static', filename='images/Screenshot 2026-02-28 at 20.55.56.png') }}" alt="Card 58"></div></div>
+<div class="card"><div class="card59"><img src="{{ url_for('static', filename='images/Screenshot 2026-02-28 at 20.57.03.png') }}" alt="Card 59"></div></div>
+<div class="card"><div class="card60"><img src="{{ url_for('static', filename='images/Screenshot 2026-02-28 at 20.57.58.png') }}" alt="Card 60"></div></div>
+
+<div class="card"><div class="card61"><img src="{{ url_for('static', filename='images/Screenshot 2026-02-28 at 20.58.33.png') }}" alt="Card 61"></div></div>
+<div class="card"><div class="card62"><img src="{{ url_for('static', filename='images/Screenshot 2026-02-28 at 20.59.37.png') }}" alt="Card 62"></div></div>
+<div class="card"><div class="card63"><img src="{{ url_for('static', filename='images/Screenshot 2026-02-28 at 21.01.47.png') }}" alt="Card 63"></div></div>
+<div class="card"><div class="card64"><img src="{{ url_for('static', filename='images/Screenshot 2026-02-28 at 21.02.22.png') }}" alt="Card 64"></div></div>
+<div class="card"><div class="card65"><img src="{{ url_for('static', filename='images/Screenshot 2026-02-28 at 21.03.00.png') }}" alt="Card 65"></div></div>
+<div class="card"><div class="card66"><img src="{{ url_for('static', filename='images/Screenshot 2026-02-28 at 21.04.21.png') }}" alt="Card 66"></div></div>
+<div class="card"><div class="card67"><img src="{{ url_for('static', filename='images/Screenshot 2026-02-28 at 21.04.57.png') }}" alt="Card 67"></div></div>
+<div class="card"><div class="card68"><img src="{{ url_for('static', filename='images/Screenshot 2026-02-28 at 21.06.10.png') }}" alt="Card 68"></div></div>
+<div class="card"><div class="card69"><img src="{{ url_for('static', filename='images/Screenshot 2026-02-28 at 21.06.50.png') }}" alt="Card 69"></div></div>
+<div class="card"><div class="card70"><img src="{{ url_for('static', filename='images/Screenshot 2026-02-28 at 21.07.45.png') }}" alt="Card 70"></div></div>
+
+<div class="card"><div class="card71"><img src="{{ url_for('static', filename='images/Screenshot 2026-02-28 at 21.08.38.png') }}" alt="Card 71"></div></div>
+<div class="card"><div class="card72"><img src="{{ url_for('static', filename='images/Screenshot 2026-02-28 at 21.09.34.png') }}" alt="Card 72"></div></div>
+<div class="card"><div class="card73"><img src="{{ url_for('static', filename='images/Screenshot 2026-02-28 at 21.11.13.png') }}" alt="Card 73"></div></div>
+<div class="card"><div class="card74"><img src="{{ url_for('static', filename='images/Screenshot 2026-02-28 at 21.12.20.png') }}" alt="Card 74"></div></div>
+<div class="card"><div class="card75"><img src="{{ url_for('static', filename='images/Screenshot 2026-02-28 at 21.12.56.png') }}" alt="Card 75"></div></div>
+<div class="card"><div class="card76"><img src="{{ url_for('static', filename='images/Screenshot 2026-02-28 at 21.13.37.png') }}" alt="Card 76"></div></div>
+<div class="card"><div class="card77"><img src="{{ url_for('static', filename='images/Screenshot 2026-02-28 at 21.14.19.png') }}" alt="Card 77"></div></div>
+<div class="card"><div class="card78"><img src="{{ url_for('static', filename='images/Screenshot 2026-02-28 at 21.14.52.png') }}" alt="Card 78"></div></div>
+<div class="card"><div class="card79"><img src="{{ url_for('static', filename='images/Screenshot 2026-02-28 at 21.16.33.png') }}" alt="Card 79"></div></div>
+<div class="card"><div class="card80"><img src="{{ url_for('static', filename='images/Screenshot 2026-02-28 at 21.17.35.png') }}" alt="Card 80"></div></div>
+
+<div class="card"><div class="card81"><img src="{{ url_for('static', filename='images/Screenshot 2026-02-28 at 21.19.04.png') }}" alt="Card 81"></div></div>
+<div class="card"><div class="card82"><img src="{{ url_for('static', filename='images/Screenshot 2026-02-28 at 21.19.25.png') }}" alt="Card 82"></div></div>
+<div class="card"><div class="card83"><img src="{{ url_for('static', filename='images/Screenshot 2026-02-28 at 21.20.17.png') }}" alt="Card 83"></div></div>
+<div class="card"><div class="card84"><img src="{{ url_for('static', filename='images/Screenshot 2026-02-28 at 21.20.49.png') }}" alt="Card 84"></div></div>
+<div class="card"><div class="card85"><img src="{{ url_for('static', filename='images/Screenshot 2026-02-28 at 21.21.29.png') }}" alt="Card 85"></div></div>
+<div class="card"><div class="card86"><img src="{{ url_for('static', filename='images/Screenshot 2026-02-28 at 21.22.22.png') }}" alt="Card 86"></div></div>
+<div class="card"><div class="card87"><img src="{{ url_for('static', filename='images/Screenshot 2026-02-28 at 21.24.53.png') }}" alt="Card 87"></div></div>
+<div class="card"><div class="card88"><img src="{{ url_for('static', filename='images/Screenshot 2026-02-28 at 21.26.05.png') }}" alt="Card 88"></div></div>
+<div class="card"><div class="card89"><img src="{{ url_for('static', filename='images/Screenshot 2026-02-28 at 21.27.29.png') }}" alt="Card 89"></div></div>
+<div class="card"><div class="card90"><img src="{{ url_for('static', filename='images/Screenshot 2026-02-28 at 21.27.53.png') }}" alt="Card 90"></div></div>
+
+<div class="card"><div class="card91"><img src="{{ url_for('static', filename='images/Screenshot 2026-02-28 at 21.29.43.png') }}" alt="Card 91"></div></div>
+<div class="card"><div class="card92"><img src="{{ url_for('static', filename='images/Screenshot 2026-02-28 at 21.30.28.png') }}" alt="Card 92"></div></div>
+<div class="card"><div class="card93"><img src="{{ url_for('static', filename='images/Screenshot 2026-02-28 at 21.31.13.png') }}" alt="Card 93"></div></div>
+<div class="card"><div class="card94"><img src="{{ url_for('static', filename='images/Screenshot 2026-02-28 at 21.32.01.png') }}" alt="Card 94"></div></div>
+<div class="card"><div class="card95"><img src="{{ url_for('static', filename='images/Screenshot 2026-02-28 at 21.32.45.png') }}" alt="Card 95"></div></div>
+<div class="card"><div class="card96"><img src="{{ url_for('static', filename='images/Screenshot 2026-02-28 at 21.33.21.png') }}" alt="Card 96"></div></div>
+<div class="card"><div class="card97"><img src="{{ url_for('static', filename='images/Screenshot 2026-02-28 at 21.34.08.png') }}" alt="Card 97"></div></div>
+<div class="card"><div class="card98"><img src="{{ url_for('static', filename='images/Screenshot 2026-02-28 at 22.01.23.png') }}" alt="Card 98"></div></div>
+<div class="card"><div class="card99"><img src="{{ url_for('static', filename='images/Screenshot 2026-02-28 at 22.05.19.png') }}" alt="Card 99"></div></div>
+<div class="card"><div class="card100"><img src="{{ url_for('static', filename='images/Screenshot 2026-02-28 at 22.06.18.png') }}" alt="Card 100"></div></div>
+  </div>
+</section>
+

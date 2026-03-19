@@ -4,7 +4,7 @@
 body {
     margin: 0;
     padding: 0;
-      background-image: url(coolbackgrounds-unsplash-zeller.jpg);
+      background-image: url(/static/images/coolbackgrounds-unsplash-zeller.jpg);
 }
 
 *{
