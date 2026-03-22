@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
+@import url(https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap);
+
 body {
     margin: 0;
     padding: 0;
@@ -127,4 +130,317 @@ nav ul {
 
 #Log-Btnn:hover {
 background-color: rgb(139, 0, 0);
+}
+
+.cards-vol {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  padding-left: 100px; padding-right: 100px;
+  padding-top: 50px
+}
+
+.volcard1, .volcard2, .volcard3, .volcard4, .volcard5, .volcard6, .volcard7, .volcard8, .volcard9, .volcard10 {
+  display: block;
+  min-height: 525px; max-height: 800px; width: 350px;
+  border: 1px solid black;
+  border-radius: 20px;
+  margin-left: 20px;
+  background: linear-gradient(to bottom, #004197 , #01295c 80%);
+  color: white;
+  font-family: 'Inter', sans-serif;
+}
+
+.volcard1 button, .volcard2 button, .volcard3 button, .volcard4 button, .volcard5 button, .volcard6 button, .volcard7 button,.volcard8 button, .volcard9 button, .volcard10 button {
+ margin-left: 120px; margin-bottom: 10px;
+ border-radius: 100px; font-family: 'Lato', sans-serif; font-size: 20px; font-weight: 600;
+ width: 100px; height: 40px;
+ background-color: rgb(212, 212, 212);
+ color: #000000;
+ transition: all 0.5s ease;
+ border: 1px solid black;
+   box-shadow: 0 6px 30px rgba(0, 0, 0, 0.42);
+  overflow: hidden;
+  position: relative;
+}
+
+.volcard1 img, .volcard2 img, .volcard3 img,.volcard4 img, .volcard5 img, .volcard6 img, .volcard7 img, .volcard8 img, .volcard9 img, .volcard10 img  {
+  height: 200px; width: 350px;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+}
+
+.volcard1 h6, .volcard2 h6, .volcard3 h6, .volcard4 h6, .volcard5 h6, .volcard6 h6, .volcard7 h6,.volcard8 h6, .volcard9 h6, .volcard10 h6 {
+  margin-top: -20px;
+  padding-left: 15px;
+}
+
+.volcard1 h2, .volcard2 h2, .volcard3 h2, .volcard4 h2, .volcard5 h2, .volcard6 h2, .volcard7 h2, .volcard8 h2, .volcard9 h2, .volcard10 h2 {
+  padding-left: 15px; margin-top: 15px;
+  font-weight: 700; font-size: 30px;
+}
+
+.volcard1 h4, .volcard2 h4, .volcard3 h4, .volcard4 h4, .volcard5 h4, .volcard6 h4, .volcard7 h4, .volcard8 h4, .volcard9 h4, .volcard10 h4 {
+  padding-left: 15px; margin-top: -5px;
+  font-size: 20px; font-weight: 400;
+}
+
+.volcard1 h3, .volcard2 h3, .volcard3 h3, .volcard4 h3, .volcard5 h3, .volcard6 h3, .volcard7 h3, .volcard8 h3, .volcard9 h3, .volcard10 h3 {
+  padding-left: 15px; margin-top: -15px;
+  font-size: 23px; font-weight: 500;
+}
+
+.volcard1 p, .volcard2 p, .volcard3 p, .volcard4 p, .volcard5 p, .volcard6 p, .volcard7 p, .volcard8 p, .volcard9 p, .volcard10 p {
+  font-size: 10px; padding: 10px 5px 0px 5px;
+  text-align: center; margin-top: -10px
+}
+
+.volcard1 h5, .volcard2 h5, .volcard3 h5, .volcard4 h5, .volcard5 h5, .volcard6 h5, .volcard7 h5, .volcard8 h5, .volcard9 h5, .volcard10 h5 {
+  font-size: 15px; padding: 10px 5px 0px 5px; margin: 20px 0px 0 0;
+  text-align: center; margin-top: -10px
+}
+
+.volcard1 button::before, .volcard2 button::before, .volcard3 button::before, .volcard4 button::before, .volcard5 button::before, .volcard6 button::before, .volcard7 button::before, .volcard8 button::before, .volcard9 button::before,.volcard10 button::before {
+  content: "";
+  position: absolute;
+  top: -20%;
+  left: -120%;
+  width: 120%;
+  height: 120%;
+  background: linear-gradient(200deg,rgba(255, 255, 255, 0.476), transparent);
+  transition: left 0.6s ease 
+}
+.volcard button:hover, .volcard2 button:hover, .volcard3 button:hover, .volcard4 button:hover, .volcard5 button:hover, .volcard6 button:hover, .volcard7 button:hover, .volcard8 button:hover, .volcard9 button:hover, .volcard10 button:hover {
+  background: linear-gradient(70deg, rgb(221, 183, 95), rgb(222, 159, 22)); color: #ffffff; font-weight: 600;
+  transform: scale(1.1);
+  border: 1px solid black;
+}
+
+.volcard1 button:hover::before, .volcard2 button:hover::before, .volcard3 button:hover::before, .volcard4 button:hover::before,.volcard5 button:hover::before, .volcard6 button:hover::before, .volcard7 button:hover::before, .volcard8 button:hover::before, .volcard9 button:hover::before, .volcard10 button:hover::before {
+  left: 120%
+}
+
+.welcome h1 {
+  margin-top: 80px;
+  font-family: 'Inter'; font-weight: 700;
+  margin-left: 20px;
+}
+
+.welcome h2 {
+  font-family: 'Inter'; font-weight: 700;
+  margin-left: 20px;
+}
+
+.welcome button {
+  margin: -10px 0 0 20px;
+  border-radius: 100px; font-family: 'Lato', sans-serif; font-size: 20px; font-weight: 600;
+ width: 100px; height: 40px;
+ background-color: #01295c;
+ color: #ffffff;
+ transition: all 0.5s ease;
+ border: 1px solid black;
+  box-shadow: 0 6px 30px rgba(0, 0, 0, 0.42);
+  align-items: center; justify-content: center;
+}
+
+.welcome a {
+    text-decoration: none;
+    color: white
+}
+
+.line-vol {
+  height: 4px; width: 700px; margin-top: -10px; margin-left: 20px; 
+  background-color: darkred; 
+}
+
+.EB {
+ background-color: black;
+ color:white;
+ width: 1470px;
+ height: 640px;
+}
+
+.Band {
+  display: inline-flex;
+  border: 1px solid white;
+  border-radius: 20px;
+  width: 200px; height: 50px;
+  margin-left: 350px;
+  align-items: center;
+  justify-content: center;
+  transition: 0.5s ease;
+}
+
+.Band a {
+  text-decoration: none;
+  color:white; font-family: 'Lato', sans-serif; font-size: 15px;
+  margin-right: 4px;
+  transition: 0.5s ease
+}
+
+.Band img {
+  width: 50px; height: auto
+}
+
+.Band:hover, .Band:focus {
+  border: 2px solid rgb(54, 236, 54);
+  transform: scale(1.1);
+  color: rgb(54, 236, 54);
+}
+
+.Band a:hover {
+  color: rgb(54, 236, 54)
+}
+
+.Gmail {
+  display: inline-flex;
+  position: relative;
+  border: 1px solid white;
+  border-radius: 20px;
+  width: 200px; height: 50px;
+  margin-left: 75px;
+  align-items: center;
+  justify-content: center;
+  transition: 0.5s ease;
+    transform: translateY(-7px);
+}
+
+.Gmail a {
+  text-decoration: none;
+  color:white; font-family: 'Lato', sans-serif; font-size: 15px;
+  transition: 0.5s ease;
+  margin-left: 10px;
+}
+
+.Gmail img {
+  width: 39px; height: auto;
+}
+
+.Gmail:hover, .Gmail:focus {
+  border: 2px solid rgb(226, 159, 44);
+  color: rgb(226, 159, 44);
+  transform: translateY(-7px) scale(1.1);
+}
+
+.Gmail a:hover {
+  color: rgb(226, 159, 44);
+}
+
+.Phone-No {
+  display: inline-flex;
+  position: relative;
+  border: 1px solid white;
+  border-radius: 20px;
+  width: 200px; height: 50px;
+  margin-left: 75px;
+  align-items: center;
+  justify-content: center;
+  transition: 0.5s ease;
+    transform: translateY(-7px)
+}
+
+.Phone-No a {
+  text-decoration: none;
+  color:white; font-family: 'Lato', sans-serif; font-size: 15px;
+  transition: 0.5s ease;
+  margin-left: 10px;
+}
+
+.Phone-No img {
+  width: 39px; height: auto;
+}
+
+.Phone-No:hover, .Phone-No:focus {
+  border: 2px solid rgb(254, 0, 0);
+  transform: translateY(-7px) scale(1.1);
+}
+
+.Phone-No a:hover {
+  color: rgb(255, 0, 0)
+}
+
+.EB h3,h4,h2 {
+font-family: 'Lato', sans-serif;
+}
+
+.EB h3 {
+  padding-top: 20px;
+ font-size: 20px; 
+ align-self: center;
+ justify-self: center;
+ font-weight: 300;
+}
+
+.EB h2 {
+ line-height: 0.1;
+ font-size: 25px; 
+ align-self: center;
+ justify-self: center;
+ font-weight: 700; font-style: italic;
+}
+
+.EB h4 {
+ line-height: 2;
+ font-size: 20px; 
+ align-self: center;
+ justify-self: center;
+ font-weight: 500; 
+}
+
+.Extra {
+ display: grid;
+ grid-template-columns: repeat(3, 1fr);
+ align-items: center;
+ justify-content: center;
+ margin-left: 270px
+}
+
+.Extra a {
+  display: block; 
+  text-decoration: none;
+  color: white;
+  font-family: 'Lato'; font-size: 15px;
+  line-height: 3;
+  transition: 0.3s ease
+}
+
+.Extra h5 {
+  color: rgb(238, 0, 0);
+  font-size: 20px; font-family: 'Lato'; 
+  line-height: 0
+}
+
+.Extra h6 {
+display: block; 
+  text-decoration: none;
+  color: white;
+  font-family: 'Lato'; font-size: 15px;
+  line-height: 1.5;
+  font-weight: 500
+}
+
+.Member-EB {
+ padding-left: 100px;
+}
+
+.Line-EB {
+  width: 1375px; height: 2px;
+  background-color: rgb(184, 184, 184);
+  margin-left: 40px;
+  margin-top: 30px
+}
+
+.Final-EB img {
+ width: 70px;
+ margin-top: 30px; margin-left: 40px
+}
+
+.Final-EB h6 {
+ font-size: 20px; font-family: 'Lato'; font-weight: 500; 
+ margin-left: 1200px; margin-top: -60px
+}
+
+.Extra a:hover, .Extra a:focus {
+ color: red;
+ transform: scale(1.03);
+  cursor: pointer;
 }

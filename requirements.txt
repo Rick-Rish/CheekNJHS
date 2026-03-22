@@ -1,3 +1,8 @@
-flask
 mysql-connector-python
 werkzeug
+Flask
+Flask-SQLAlchemy
+Flask-Login
+Flask-Bcrypt
+Authlib
+gunicorn

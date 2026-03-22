@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home</title> 
-    <link rel="icon" href="cheek-ms-favicon.png">
+    <link rel="icon" href="{{ url_for('static', filename='images/cheek-ms-favicon.png') }}">
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
@@ -50,8 +50,8 @@
 <h1>Welcome to Cheek NJHS</h1>
 <h2>Volunteering to Help the Community is our Duty,<br>and we strive to do so, to make an impact.</h2>
        <div class="WButtons">
- <a href="volunteering.html" class="v-btn" id="Volunteer">Volunteer</a>
-  <a href="hours.html" id="Hours">Check Hours</a>
+ <a href="{{ url_for('volunteer') }}" class="v-btn" id="Volunteer">Volunteer</a>
+  <a href="{{ url_for('hours') }}" id="Hours">Check Hours</a>
         <div class="slideshow">
         </div>
       </div>
@@ -74,57 +74,57 @@
     <div class="opportext">
     <h2>Important Member Meeting</h2>
     <h4>On</h4>
-    <h3>January 27, 2026</h3>
+    <h3>TBA</h3>
     <h6>7:15AM or 3:45PM</h6>
     </div>
   </div>
      
     <div class="opporgrid1">
-      <img src="{{ url_for('static', filename='images/Screenshot 2026-01-09 at 17.07.45.png') }}" alt="Meeting"> 
+      <img src="{{ url_for('static', filename='images/Screenshot 2026-02-28 at 21.27.29.png') }}" alt="Induction"> 
     <div class="opportext1">
-    <h2>Important Member Meeting</h2>
+    <h2>Induction Ceremony Setup</h2>
     <h4>On</h4>
-    <h3>January 27, 2026</h3>
-    <h6>7:15AM or 3:45PM</h6>
+    <h3>March 24, 2026</h3>
+    <h6>3:45PM - 5PM</h6>
     </div>
   </div>
 
     <div class="opporgrid2">
-      <img src="{{ url_for('static', filename='images/Screenshot 2026-01-09 at 17.07.45.png') }}" alt="Meeting"> 
+      <img src="{{ url_for('static', filename='images/Screenshot 2026-02-28 at 21.27.29.png') }}" alt="Induction"> 
     <div class="opportext2">
-    <h2>Important Member Meeting</h2>
+    <h2>Induction Ceremony</h2>
     <h4>On</h4>
-    <h3>January 27, 2026</h3>
-    <h6>7:15AM or 3:45PM</h6>
+    <h3>March 24, 2026</h3>
+    <h6>5PM - 8PM</h6>
     </div>
   </div>
     
    <div class="opporgrid3">
-      <img src="{{ url_for('static', filename='images/Screenshot 2026-01-09 at 17.07.45.png') }}" alt="Meeting"> 
+      <img src="{{ url_for('static', filename='images/Screenshot 2026-02-28 at 21.32.01.png') }}" alt="Meeting"> 
     <div class="opportext3">
-    <h2>Important Member Meeting</h2>
-    <h4>On</h4>
-    <h3>January 27, 2026</h3>
-    <h6>7:15AM or 3:45PM</h6>
+    <h2>Sign Up For Events</h2>
+    <h4>In</h4>
+    <h3>The Volunteering Tab</h3>
+    <h6>Let's Go!</h6>
     </div>
   </div>
 
      <div class="opporgrid4">
-      <img src="{{ url_for('static', filename='images/Screenshot 2026-01-09 at 17.07.45.png') }}" alt="Meeting"> 
+      <img src="{{ url_for('static', filename='images/Screenshot 2026-03-22 at 11.11.56.png') }}" alt="Meeting"> 
     <div class="opportext4">
-    <h2>Important Member Meeting</h2>
-    <h4>On</h4>
-    <h3>January 27, 2026</h3>
-    <h6>7:15AM or 3:45PM</h6>
+    <h2>Join the Band App</h2>
+    <h4></h4>
+    <h3>Below</h3>
+    <h6>After 3/24</h6>
     </div>
   </div>
 
      <div class="opporgrid5">
       <img src="{{ url_for('static', filename='images/Screenshot 2026-01-09 at 17.07.45.png') }}" alt="Meeting"> 
     <div class="opportext5">
-    <h2>Important Member Meeting</h2>
+    <h2>Important Officer Meeting</h2>
     <h4>On</h4>
-    <h3>January 27, 2026</h3>
+    <h3>TBA</h3>
     <h6>7:15AM or 3:45PM</h6>
     </div>
   </div>
@@ -136,7 +136,7 @@
   <h4>Learn about the requirements, and work hard to join as a member! <br> Selection for candidates only occurs once every school year, so make sure to aim for your goal!</h4>
   <h6>Rules and Restrictions apply for all. </h6>
    <div class="buttonl">
-   <a href="requirements.html" class="learn-more">Learn More</a>
+   <a href="{{ url_for('req') }}" class="learn-more">Learn More</a>
    </div>
 </div>
 
@@ -147,7 +147,6 @@
    <div class="button-eb"></div>
     <div class="Band">
   <img src="{{ url_for('static', filename='images/Screenshot_2026-01-27_at_11.48.42-removebg-preview.png') }}" alt="B">
-       <!-- {{ url_for('static', filename='images/Screenshot_2026-02-23_at_17.12.11.png') }} -->
   <a href="https://www.band.us/band/99487941/member">Band App</a>
     </div>
 
@@ -158,7 +157,7 @@
 
           <div class="Phone-No">
   <img src="{{ url_for('static', filename='images/Screenshot_2026-03-18_at_18.53.58-removebg-preview.png') }}" alt="P">
-  <a href="">Phone Number<br>(EMER. ONLY)</a>
+  <a href="">972-347-7680<br></a>
           </div>
         </div>
     <div class="Extra">
