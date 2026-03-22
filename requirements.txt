@@ -6,3 +6,4 @@ Flask-Login
 Flask-Bcrypt
 Authlib
 gunicorn
+requests
