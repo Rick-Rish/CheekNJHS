@@ -6,6 +6,7 @@ from flask_bcrypt import Bcrypt
 from authlib.integrations.flask_client import OAuth
 from datetime import datetime
 from sqlalchemy import text
+import os
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = '2a421c841097eadac4554d06abdc6751'
@@ -348,7 +349,8 @@ def page_not_found(e):
 if __name__ == "__main__":
     with app.app_context():
         db.create_all()
-app.run()
+    port = int(os.environ.get("PORT", 10000))
+    app.run(host="0.0.0.0", port=port)
 
 # if __name__ == "__main__":
  # app.run(debug=True)
