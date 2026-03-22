@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pictures</title>
          <link rel="stylesheet" href="pictures.css">
-        <link rel="icon" href="cheek-ms-favicon.png">
+        <link rel="icon" href="{{ url_for('static', filename='images/cheek-ms-favicon.png') }}">
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
@@ -169,3 +169,54 @@
   </div>
 </section>
 
+<section class="EB">
+  <h3>With you every step</h3>
+  <h2>of the journey</h2>
+  <h4>Contact Us Below</h4>
+   <div class="button-eb"></div>
+    <div class="Band">
+  <img src="{{ url_for('static', filename='images/Screenshot_2026-01-27_at_11.48.42-removebg-preview.png') }}" alt="B">
+  <a href="https://www.band.us/band/99487941/member">Band App</a>
+    </div>
+
+       <div class="Gmail">
+  <img src="{{ url_for('static', filename='images/Screenshot_2026-01-27_at_11.51.12-removebg-preview.png') }}" alt="G">
+  <a href="mailto:dfields@g.dentonisd.org">Gmail</a>
+       </div>
+
+          <div class="Phone-No">
+  <img src="{{ url_for('static', filename='images/Screenshot_2026-03-18_at_18.53.58-removebg-preview.png') }}" alt="P">
+  <a href="">972-347-7680<br></a>
+          </div>
+        </div>
+    <div class="Extra">
+     <div clas="About-EB">
+    <h5>About Us</h5>
+    <a href="{{ url_for('about_us') }}">About Us</a>
+    <a href="{{ url_for('about_us') }}">Copyright</a>
+    <a href="https://cheekms.dentonisd.org/">Cheek Middle School</a>
+    <a href="https://sites.google.com/g.dentonisd.org/go-panthers/home">Mrs. Fields</a>
+    </div>
+
+    <div clas="Member-EB">
+    <h5>For Members</h5>
+    <a href="{{ url_for('login') }}">Log In</a>
+    <a href="{{ url_for('login') }}">Sign Up</a>
+    <a href="{{ url_for('hours') }}">Log Hours</a>
+    <a href="{{ url_for('volunteer') }}">Upcoming Events</a>
+    </div>
+
+    <div clas="Support-EB">
+    <h5>Support</h5>
+    <h6>Email Linked Above</h6>
+    <h6>Band Linked Above</h6>
+    <h6>Phone Number Linked Above</h6>
+    </div>
+  </div>
+  
+  <div class="Final-EB">
+  <div class="Line-EB"></div>
+  <img src="{{ url_for('static', filename='images/cheek-ms-favicon.png') }}">
+  <h6>© Cheek NJHS - all rights reserved</h6>
+  </div>
+</section>

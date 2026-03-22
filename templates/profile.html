@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{user.username}}'s Profile</title>
+    <link rel="icon" href="{{ url_for('static', filename='images/cheek-ms-favicon.png') }}">
 </head>
 <body>
 </body>
@@ -37,34 +38,95 @@
     </nav>
 </section>
 
+<div class="welcome">
 <h1>Welcome, {{user.username}}</h1>
-<a href="{{ url_for('logout') }}">Logout</a>
-
+<a href="{{ url_for('logout') }}"><button>Logout</button></a>
 <h2>Your Upcoming Events</h2>
+    <div class="line-vol"></div>
+</div>
+<section class="cards-vol">
 
 {% if upcoming %}
-     {% for event in upcoming %}
-       <div class="prof-event">
-          <h2>{{ event.name }}</h2>
-          <h4>On</h4>
-          <h3>{{ event.date }}</h3>
-          <h6>{{ event.time }}</h6>
-          <p>Description: {{ event.description }}</p>
-          <form method="POST" action="{{ url_for('cancel_signup', event_id=event.id) }}">
-             <button type="submit" class="cancel-btn">Cancel</button>
-          </form>  
-          <p>People Signed Up:</p>
-     {% if event.signups %}
-      <ul>
-        {% for signup in event.signups %}
-          <li>{{ signup.User.username }}</li>
-        {% endfor %}
-      </ul>
-    {% else %}
-      <p>No one signed up yet.</p>
-    {% endif %}
+  {% for event in upcoming %}
+    <div class="volcard volcard{{ loop.index }}">
+      <img src="{{ url_for('static', filename='images/Screenshot 2026-02-28 at 21.27.29.png') }}" 
+           alt="{{ event.name }}">
+      <h2>{{ event.name }}</h2>
+      <h4>On</h4>
+      <h3>{{ event.date }}</h3>
+      <h6>{{ event.time }}</h6>
+
+      <p>Description: {{ event.description }}</p>
+
+      <form method="POST" action="{{ url_for('cancel_signup', event_id=event.id) }}">
+        <button type="submit" class="cancel-btn">Cancel</button>
+      </form>  
+
+      <h5>People Signed Up:</h5>
+      {% if event.signups %}
+        <ul>
+          {% for signup in event.signups %}
+            <li>{{ signup.User.username }}</li>
+          {% endfor %}
+        </ul>
+      {% else %}
+        <p>No one signed up yet.</p>
+      {% endif %}
     </div>
-   {% endfor %}
-  {% else %}
- <p>You haven't signed up for any events.</p>
+  {% endfor %}
+{% else %}
+  <p>You haven't signed up for any events.</p>
 {% endif %}
+</section>
+
+<section class="EB">
+  <h3>With you every step</h3>
+  <h2>of the journey</h2>
+  <h4>Contact Us Below</h4>
+   <div class="button-eb"></div>
+    <div class="Band">
+  <img src="{{ url_for('static', filename='images/Screenshot_2026-01-27_at_11.48.42-removebg-preview.png') }}" alt="B">
+  <a href="https://www.band.us/band/99487941/member">Band App</a>
+    </div>
+
+       <div class="Gmail">
+  <img src="{{ url_for('static', filename='images/Screenshot_2026-01-27_at_11.51.12-removebg-preview.png') }}" alt="G">
+  <a href="mailto:dfields@g.dentonisd.org">Gmail</a>
+       </div>
+
+          <div class="Phone-No">
+  <img src="{{ url_for('static', filename='images/Screenshot_2026-03-18_at_18.53.58-removebg-preview.png') }}" alt="P">
+  <a href="">972-347-7680<br></a>
+          </div>
+        </div>
+    <div class="Extra">
+     <div clas="About-EB">
+    <h5>About Us</h5>
+    <a href="{{ url_for('about_us') }}">About Us</a>
+    <a href="{{ url_for('about_us') }}">Copyright</a>
+    <a href="https://cheekms.dentonisd.org/">Cheek Middle School</a>
+    <a href="https://sites.google.com/g.dentonisd.org/go-panthers/home">Mrs. Fields</a>
+    </div>
+
+    <div clas="Member-EB">
+    <h5>For Members</h5>
+    <a href="{{ url_for('login') }}">Log In</a>
+    <a href="{{ url_for('login') }}">Sign Up</a>
+    <a href="{{ url_for('hours') }}">Log Hours</a>
+    <a href="{{ url_for('volunteer') }}">Upcoming Events</a>
+    </div>
+
+    <div clas="Support-EB">
+    <h5>Support</h5>
+    <h6>Email Linked Above</h6>
+    <h6>Band Linked Above</h6>
+    <h6>Phone Number Linked Above</h6>
+    </div>
+  </div>
+  
+  <div class="Final-EB">
+  <div class="Line-EB"></div>
+  <img src="{{ url_for('static', filename='images/cheek-ms-favicon.png') }}">
+  <h6>© Cheek NJHS - all rights reserved</h6>
+  </div>
+</section>

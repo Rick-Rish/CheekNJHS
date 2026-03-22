@@ -1,9 +1,12 @@
+import executing
 from flask import Flask, render_template, flash, redirect, request, url_for, session
 import re
 from flask_sqlalchemy import SQLAlchemy
 from flask_login import LoginManager, UserMixin, login_user
 from flask_bcrypt import Bcrypt
 from authlib.integrations.flask_client import OAuth
+from datetime import datetime
+from sqlalchemy import text
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = '2a421c841097eadac4554d06abdc6751'
@@ -29,7 +32,34 @@ google = oauth.register(
         'scope': 'openid email profile'
     }
 )
-""" # MAKE SURE THIS GETS BACK TO NORMAL
+""" # 1st Update
+
+events_data = [
+        {
+            "name": "Induction Ceremony",
+            "date": "March 24, 2026",
+            "time": "3:00 to 8:00PM Slots",
+            "description": "Our NJHS Induction Ceremony welcomes all new 7th and 8th graders who have been invited to the NJHS Committee. They have accepted this opportunity, and have agreed to volunteer to make the community better. Come for this annual event, so you can be on stage, backstage, or simply set the event up!",
+            "end_datetime": datetime.strptime("2026-03-24 20:00", "%Y-%m-%d %H:%M")
+        },
+
+        {
+            "name": "Campus Work Day Mar",
+            "date": "March 26, 2026",
+            "time": "3:40 to 4:15PM",
+            "description": "On this day, we help teachers to tidy everything up for them, and in general help them, like sometimes with grading papers. This happens after school, and once every month, so this is that day for March! Help out some of our great teachers! Meet up in the 7th grade pod. ",
+            "end_datetime": datetime.strptime("2026-03-26 16:15", "%Y-%m-%d %H:%M")
+        },
+
+        {
+            "name": "Campus Work Day Apr",
+            "date": "April 30, 2026",
+            "time": "3:40 to 4:15PM",
+            "description": "On this day, we help teachers to tidy everything up for them, and in general help them, like sometimes with grading papers. This happens after school, and once every month, so this is that day for March! Help out some of our great teachers! Meet up in the 7th grade pod. ",
+            "end_datetime": datetime.strptime("2026-04-30 16:15", "%Y-%m-%d %H:%M")
+        },
+    ]
+
 class User(db.Model, UserMixin): 
     id = db.Column(db.Integer, primary_key=True)
     username = db.Column(db.String(20), unique=True, nullable=False)
@@ -47,6 +77,7 @@ class Event(db.Model):
     date = db.Column(db.Text, nullable=False)
     time = db.Column(db.Text, nullable=False)
     description = db.Column(db.Text, nullable=False)
+    end_datetime = db.Column(db.DateTime, nullable=True)
 
     signups = db.relationship("Signup", backref="Event", lazy=True)
 
@@ -65,6 +96,17 @@ all_events = [
        "img" : "Screenshot 2026-02-08 at 20.38.53.png"
     },
 ]
+
+with app.app_context():
+    with db.engine.connect() as conn:
+        result = conn.execute(text("PRAGMA table_info(event)")).fetchall()
+        columns = [col[1] for col in result]
+
+        if "end_datetime" not in columns:
+            conn.execute(text("ALTER TABLE event ADD COLUMN end_datetime DATETIME"))
+            print("Added end_datetime column to Event table")
+        else:
+            print("end_datetime column already exists")
 
 @app.route("/")
 def home():
@@ -177,7 +219,7 @@ def callback():
     session['user'] = username
     flash("Logged in successfully with Google", "success")
     return redirect(url_for("user"))
-""" # MAKE SURE THIS GOES BACK TO NORMAL
+""" # 1st Update
 @app.route("/logout")
 def logout():
     session.clear()
@@ -186,6 +228,42 @@ def logout():
 @app.route("/volunteer")
 def volunteer():
  eventsdb = Event.query.all()
+ event_names = [e["name"] for e in events_data]
+ for event in Event.query.all():
+        if event.name not in event_names:
+            db.session.delete(event)
+
+ for e in events_data:
+    existing = Event.query.filter_by(name=e["name"]).first()
+
+    if not existing: 
+        new_event = Event(
+            name=e["name"],
+            date=e["date"],
+            time=e["time"],
+            description=e["description"],
+            end_datetime=e.get("end_datetime") 
+        )
+        db.session.add(new_event)
+    else:
+        existing.name = e["name"]
+        existing.date = e["date"]
+        existing.time = e["time"]
+        existing.description = e["description"]
+        existing.end_datetime = e.get("end_datetime")
+
+ db.session.commit()
+
+ now = datetime.now()
+
+ for event in eventsdb:
+    if event.end_datetime and event.end_datetime > now:
+        print(f"{event.name} is upcoming")
+    else:
+        print(f"{event.name} has ended")
+        db.session.delete(event)
+
+ '''
  with app.app_context():
     if Event.query.count() == 0:
         event = Event(
@@ -196,8 +274,8 @@ def volunteer():
         )
         db.session.add(event)
         db.session.commit()
+ '''
  print(eventsdb)
-
  if 'user' not in session:
     flash("Please log in to access volunteering", "warning")
     return redirect(url_for("login"))
@@ -271,7 +349,13 @@ def page_not_found(e):
 if __name__ == "__main__":
     with app.app_context():
         db.create_all()
-app.run(host="0.0.0.0", port=5000, debug=True)
+app.run()
 
 # if __name__ == "__main__":
  # app.run(debug=True)
+
+with app.app_context():
+    event = Event.query.filter_by(name="Induction Ceremony").first()
+    if event:
+        event.description = "Our NJHS Induction Ceremony welcomes all new 7th and 8th graders who have been invited to the NJHS Committee. They have accepted this opportunity, and have agreed to volunteer to make the community better. Come for this annual event, so you can be on stage, backstage, or simply set the event up!"
+        db.session.commit()

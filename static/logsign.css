@@ -338,3 +338,7 @@ background-color: rgb(139, 0, 0);
     font-size: 10px;
     margin-top: -20px
 }
+
+.social-icons a{
+    display: none;
+}
