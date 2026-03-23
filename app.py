@@ -10,7 +10,9 @@ import os
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = '2a421c841097eadac4554d06abdc6751'
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///cheeknjhs.db'
+app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get(
+    "DATABASE_URL", "sqlite:///cheeknjhs.db"
+)
 """
 
 """
@@ -79,7 +81,7 @@ class Event(db.Model):
     description = db.Column(db.Text, nullable=False)
     end_datetime = db.Column(db.DateTime, nullable=True)
 
-    signups = db.relationship("Signup", backref="Event", lazy=True)
+    signups = db.relationship("Signup", backref="Event", lazy=True, cascade="all, delete")
 
 class Signup(db.Model):
     id = db.Column(db.Integer, primary_key=True)
@@ -118,6 +120,7 @@ def register():
     email = request.form.get('email', '')
     password = request.form.get('password', '')
     conpassword = request.form.get('con-password', '')
+    existing_user = User.query.filter_by(email=email).first()
 
     if request.method == "POST":
         username = request.form['name']
@@ -137,6 +140,10 @@ def register():
     
     if conpassword != password:
         errors.append("Retype your password.")
+
+    if existing_user:
+      flash("An account with this email already exists. Please log in instead.", "warning")
+      return render_template("logsign.html")
 
     if errors:
         for e in errors:
@@ -252,16 +259,16 @@ def volunteer():
         existing.description = e["description"]
         existing.end_datetime = e.get("end_datetime")
 
- db.session.commit()
-
  now = datetime.now()
 
+ eventsdb = Event.query.all()
+
  for event in eventsdb:
-    if event.end_datetime and event.end_datetime > now:
-        print(f"{event.name} is upcoming")
-    else:
-        print(f"{event.name} has ended")
+    if event.end_datetime and event.end_datetime <= now:
         db.session.delete(event)
+ db.session.commit() 
+
+ eventsdb = Event.query.all()
 
  '''
  with app.app_context():
@@ -293,9 +300,9 @@ def signup_event(event_id) :
 
    user = User.query.filter_by(username=session["user"]).first()
    signup = Signup(user_id=user.id, event_id=event_id)
-   exsisting_signup = Signup.query.filter_by(user_id=user.id, event_id=event_id).first()
+   existing_signup = Signup.query.filter_by(user_id=user.id, event_id=event_id).first()
 
-   if exsisting_signup:
+   if existing_signup:
       flash("You have already signed up for this event.", "info")
 
    else:
